@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/main.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"></script>
+  <title>email list</title>
+</head>
+
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Generatore di Email</h1>
+      <p class="subtitle">10 email casuali dalla API di Boolean</p>
+    </header>
+
+    <section class="controls">
+      
+      <button id="reloadBtn" type="button">
+        Genera 10 nuove email
+      </button>
+      
+      <span id="status"></span>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">Lista email</h2>
+      
+      <ul id="emailList"></ul>
+    </section>
+
+    <footer class="footer">
+      <span>Powerd by Augusto Di Leo &copy;</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
