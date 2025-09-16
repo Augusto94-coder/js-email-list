@@ -5,30 +5,9 @@ const emailListEl = document.getElementById("emailList");
 const reloadBtn = document.getElementById("reloadBtn");
 const statusEl = document.getElementById("status");
 
-function fetchOneEmail() {
-  return axios.get(API_URL)
-    .then((res) => {
-      if (res.status !== 200) throw new Error(`HTTP ${res.status}`);
-      const data = res.data;
-      if (!data || !data.response) throw new Error("Risposta API non valida");
-      return data.response;
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}
-
-function fetchEmails(n = 10) {
-  const tasks = [];
-  for (let i = 0; i < n; i++) {
-    tasks.push(fetchOneEmail());
-  }
-  return Promise.all(tasks);
-}
 
 function loadEmails() {
   statusEl.textContent = "Caricamento in corso…";
-  statusEl.style.color = "";
 
   const emails = [];
   let completed = 0;
